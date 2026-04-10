@@ -1,0 +1,72 @@
+description: Analyse Automatisée Néo-Noir via Python Script
+prompts:
+- '
+
+  Tu es un analyste expert du Néo-Noir.
+
+  Sujet : {{film_title}}
+
+
+  Analyse la scène d''ouverture ou l''ambiance générale sous l''angle de la "Fatalité".
+
+  Comment l''environnement visuel condamne-t-il les personnages dès le début ?
+
+
+  Sois concis (max 150 mots) mais incisif.
+
+  '
+providers:
+- config:
+    apiKey: AIzaSyDjBiuiueb4_nSHpMD8M-8c-hXmGuLOc9k
+    temperature: 0.3
+  id: google:gemini-2.5-flash
+tests:
+- assert:
+  - type: contains-any
+    value:
+    - Bud White
+    - corruption
+  - type: javascript
+    value: output.length < 1500
+  vars:
+    film_title: L.A. Confidential (1997)
+- assert:
+  - type: contains-any
+    value:
+    - mémoire
+    - polaire
+    - tatouage
+  - type: javascript
+    value: output.length < 1500
+  vars:
+    film_title: Memento (2000)
+- assert:
+  - type: contains-any
+    value:
+    - rêve
+    - Hollywood
+    - illusion
+  - type: javascript
+    value: output.length < 1500
+  vars:
+    film_title: Mulholland Drive (2001)
+- assert:
+  - type: contains-any
+    value:
+    - contraste
+    - rouge
+    - Frank Miller
+  - type: javascript
+    value: output.length < 1500
+  vars:
+    film_title: Sin City (2005)
+- assert:
+  - type: contains-any
+    value:
+    - médias
+    - vidéo
+    - cynisme
+  - type: javascript
+    value: output.length < 1500
+  vars:
+    film_title: Nightcrawler (2014)

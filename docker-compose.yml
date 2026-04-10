@@ -1,0 +1,15 @@
+services:
+  formation-ia:
+    build: .
+    container_name: formation-ia-service
+    environment:
+      - HUNTER_API_KEY=${HUNTER_API_KEY}
+      - SENDER_EMAIL=${SENDER_EMAIL}
+      - SENDER_PASSWORD=${SENDER_PASSWORD}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - .:/app
+    ports:
+      - "28080:8081" # Accès via http://localhost:28080
+    restart: unless-stopped
+    command: ["python", "app.py"]

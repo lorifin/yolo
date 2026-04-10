@@ -1,0 +1,20 @@
+description: "Test Scénario Néo-Noir : Robot & Maya"
+
+prompts:
+  - prompts/scenario_struct.txt
+
+providers:
+  - id: openai:gpt-4o
+    config:
+      temperature: 0.7
+
+tests:
+  - vars:
+      input: "C'est un film néo noire, le personnage principal est un robot humainoide, c'est un autochtone, dans son recit il rencontre maya l’abeille qui lui fait Six seven"
+    assert:
+      - type: icontains
+        value: "ANALYSE"
+      - type: icontains
+        value: "SCÈNE"
+      - type: llm-rubric
+        value: "Le format doit être respecté (Analyse puis Scène). L'ambiance doit être Néo-Noir. L'intégration de 'Maya l'abeille' doit être adaptée au style réaliste (ex: symbole, jouet, publicité) et non littérale (cartoon)."

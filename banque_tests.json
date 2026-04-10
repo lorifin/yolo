@@ -1,0 +1,22 @@
+[
+  {
+    "phrase": "L'interface est <b>élégante</b> mais le temps de réponse est <i>horrible</i>.",
+    "attendu": "Négatif",
+    "note": "Contradiction avec 'mais' - Le négatif l'emporte."
+  },
+  {
+    "phrase": "Ce n'est pas un mauvais produit.",
+    "attendu": "Positif",
+    "note": "Double négation - Difficile pour le ML simple."
+  },
+  {
+    "phrase": "Le support client est d'une aide précieuse !",
+    "attendu": "Positif",
+    "note": "Cas simple de mots-clés."
+  },
+  {
+    "phrase": "Bug sur bug, je déteste cette mise à jour.",
+    "attendu": "Négatif",
+    "note": "Répétition de mots négatifs."
+  }
+]

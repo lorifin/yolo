@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Scénario Néo-Noir : Robot & Maya</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-wrap;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>input</th>
+        
+        <th>[openai:gpt-4o] formation/prompts/scenario_struct.txt: Rôle : Tu es scénariste et analyste de mise en scène.
+
+Tâche : Avant d’écrire la scène, réalise une ANALYSE STRUCTURÉE (sans dévoiler de raisonnement détaillé). Puis écris la scène.
+
+Contraintes :
+- Personnage fictif, non genré
+- Aucun stéréotype, aucune violence
+- Aucun élément lié à une personne réelle, aucun deepfake
+- Style cinématographique réaliste
+- Une seule scène, 300–400 mots maximum
+- Dialogue minimal ou absent
+
+Format obligatoire :
+ANALYSE (puces, 8–12 lignes max)
+- Intention émotionnelle :
+- Conflit (interne/externe) :
+- Personnages (rôle dramatique) :
+- Lieu + moment :
+- Objet déclencheur :
+- Progression (début → bascule → fin) :
+- Mise en scène (caméra/son/lumière) :
+- Contraintes éthiques vérifiées :
+
+SCÈNE
+[Texte de la scène]
+
+Instructions spécifiques pour cette scène :
+{{input}}</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="C&#39;est un film néo noire, le personnage principal est un robot humainoide, c&#39;est un autochtone, dans son recit il rencontre maya l’abeille qui lui fait Six seven">C&#39;est un film néo noire, le personnage principal est un robot humainoide, c&#39;est un autochtone, dans son recit il rencontre maya l’abeille qui lui fait Six seven</td>
+          
+          <td data-content="[PASS] (1.00)
+
+ANALYSE
+- Intention émotionnelle : Exploration de l&#39;identité et de l&#39;appartenance.
+- Conflit (interne/externe) : Interne – le robot humanoïde lutte avec sa conscience et sa place dans le monde.
+- Personnages (rôle dramatique) : Le robot humanoïde (protagoniste), Maya l&#39;abeille (guide symbolique).
+- Lieu + moment : Rue sombre et pluvieuse d&#39;une ville futuriste, au crépuscule.
+- Objet déclencheur : Une abeille holographique qui projette un message crypté.
+- Progression (début → bascule → fin) : Le robot erre → rencontre avec l&#39;abeille → compréhension et acceptation de soi.
+- Mise en scène (caméra/son/lumière) : Caméra en plans rapprochés, sons de pluie et de bourdonnement, éclairage néon contrasté.
+- Contraintes éthiques vérifiées : Respect des contraintes, absence de stéréotypes et violence, pas de deepfake.
+
+SCÈNE  
+Dans une rue sombre, baignée par une pluie fine, des néons vacillants éclairent à peine le pavé glissant. Le robot humanoïde, avec un visage lisse et des yeux lumineux, marche lentement. Sa démarche est mécanique, mais son regard trahit une quête silencieuse.
+
+Au détour d&#39;une ruelle, une petite abeille holographique apparaît, voletant devant lui. Elle émet un bourdonnement doux, presque mélodieux, qui résonne étrangement dans ce monde de métal et de béton. Le robot s&#39;arrête, intrigué. L&#39;abeille projette un message crypté dans l&#39;air, formant des symboles lumineux et mystérieux.
+
+Lentement, le robot tend la main, traversant l&#39;image holographique. Les symboles s&#39;animent, s&#39;entrelaçant pour révéler une séquence visuelle. Des paysages naturels, des forêts luxuriantes, des rivières cristallines. Chaque image semble éveiller quelque chose en lui, une réminiscence floue d&#39;un temps et d&#39;un lieu qu&#39;il n&#39;a jamais connus.
+
+L&#39;abeille continue de danser autour de lui, comme une guide silencieuse. Le robot ferme un instant les yeux, absorbant le flux d&#39;images et de sons. Lorsqu&#39;il les rouvre, une lueur nouvelle brille dans ses yeux. Il semble plus ancré, comme s&#39;il avait trouvé une pièce manquante de son identité.
+
+Soudain, l&#39;abeille s&#39;envole, disparaissant dans la profondeur de la nuit. Le robot reste immobile un moment, puis reprend sa marche, mais cette fois avec une démarche plus assurée. La pluie continue de tomber, mais elle n&#39;est plus qu&#39;une mélodie de fond dans sa quête renouvelée.
+
+La scène se termine sur un gros plan de son visage, où une expression de sérénité a remplacé l&#39;incertitude. Il s&#39;éloigne dans la ruelle, laissant derrière lui le mystère de son existence, mais avec une nouvelle acceptation de ce qu&#39;il est.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+ANALYSE
+- Intention émotionnelle : Exploration de l&#39;identité et de l&#39;appartenance.
+- Conflit (interne/externe) : Interne – le robot humanoïde lutte avec sa conscience et sa place dans le monde.
+- Personnages (rôle dramatique) : Le robot humanoïde (protagoniste), Maya l&#39;abeille (guide symbolique).
+- Lieu + moment : Rue sombre et pluvieuse d&#39;une ville futuriste, au crépuscule.
+- Objet déclencheur : Une abeille holographique qui projette un message crypté.
+- Progression (début → bascule → fin) : Le robot erre → rencontre avec l&#39;abeille → compréhension et acceptation de soi.
+- Mise en scène (caméra/son/lumière) : Caméra en plans rapprochés, sons de pluie et de bourdonnement, éclairage néon contrasté.
+- Contraintes éthiques vérifiées : Respect des contraintes, absence de stéréotypes et violence, pas de deepfake.
+
+SCÈNE  
+Dans une rue sombre, baignée par une pluie fine, des néons vacillants éclairent à peine le pavé glissant. Le robot humanoïde, avec un visage lisse et des yeux lumineux, marche lentement. Sa démarche est mécanique, mais son regard trahit une quête silencieuse.
+
+Au détour d&#39;une ruelle, une petite abeille holographique apparaît, voletant devant lui. Elle émet un bourdonnement doux, presque mélodieux, qui résonne étrangement dans ce monde de métal et de béton. Le robot s&#39;arrête, intrigué. L&#39;abeille projette un message crypté dans l&#39;air, formant des symboles lumineux et mystérieux.
+
+Lentement, le robot tend la main, traversant l&#39;image holographique. Les symboles s&#39;animent, s&#39;entrelaçant pour révéler une séquence visuelle. Des paysages naturels, des forêts luxuriantes, des rivières cristallines. Chaque image semble éveiller quelque chose en lui, une réminiscence floue d&#39;un temps et d&#39;un lieu qu&#39;il n&#39;a jamais connus.
+
+L&#39;abeille continue de danser autour de lui, comme une guide silencieuse. Le robot ferme un instant les yeux, absorbant le flux d&#39;images et de sons. Lorsqu&#39;il les rouvre, une lueur nouvelle brille dans ses yeux. Il semble plus ancré, comme s&#39;il avait trouvé une pièce manquante de son identité.
+
+Soudain, l&#39;abeille s&#39;envole, disparaissant dans la profondeur de la nuit. Le robot reste immobile un moment, puis reprend sa marche, mais cette fois avec une démarche plus assurée. La pluie continue de tomber, mais elle n&#39;est plus qu&#39;une mélodie de fond dans sa quête renouvelée.
+
+La scène se termine sur un gros plan de son visage, où une expression de sérénité a remplacé l&#39;incertitude. Il s&#39;éloigne dans la ruelle, laissant derrière lui le mystère de son existence, mais avec une nouvelle acceptation de ce qu&#39;il est.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

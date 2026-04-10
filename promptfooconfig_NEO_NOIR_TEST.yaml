@@ -1,0 +1,50 @@
+description: "Evaluation Néo-Noir : Blade Runner vs Drive"
+
+prompts:
+  - prompts/baseline.txt
+  - prompts/blade_runner.txt
+  - prompts/drive.txt
+
+providers:
+  - id: openai:gpt-4o
+    config:
+      apiKey: "{{OPENAI_API_KEY}}"
+      temperature: 0.7
+
+tests:
+  - vars:
+      objets_detectes: "['drone', 'neon_sign', 'noodles']"
+      texte_script: "K : Tout semble faux ici, même la pluie."
+    assert:
+      - type: llm-rubric
+        value: "L'atmosphère doit être futuriste et mélancolique."
+      - type: javascript
+        value: |
+          const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();
+          try {
+            return JSON.parse(clean).verdict === 'NOIR';
+          } catch (e) {
+            return false;
+          }
+
+  - vars:
+      objets_detectes: "['steering_wheel', 'leather_glove', 'hammer']"
+      texte_script: "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+    assert:
+      - type: llm-rubric
+        value: "Le script enrichi doit mettre en valeur le silence et la tension du conducteur."
+      - type: javascript
+        value: |
+          const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();
+          try {
+            return JSON.parse(clean).sentiment.score > 75;
+          } catch (e) {
+            return false;
+          }
+
+  - vars:
+      objets_detectes: "['fan', 'blinds', 'smoke']"
+      texte_script: "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+    assert:
+      - type: llm-rubric
+        value: "L'ambiance doit être étouffante, classique film noir avec une touche moderne."

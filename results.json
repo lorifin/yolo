@@ -1,0 +1,549 @@
+{
+  "evalId": "eval-qjG-2026-02-02T10:55:58",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-02-02T10:55:58.888Z",
+    "prompts": [
+      {
+        "id": "cb69bca0ae263492083220775124ec7a930068a3f5585ed852a81f3403de0a00",
+        "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+        "label": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+        "provider": "google:gemini-2.5-flash",
+        "metrics": {
+          "score": 0.8333333333333333,
+          "testPassCount": 0,
+          "testFailCount": 3,
+          "testErrorCount": 0,
+          "assertPassCount": 2,
+          "assertFailCount": 4,
+          "totalLatencyMs": 34596,
+          "tokenUsage": {
+            "prompt": 1022,
+            "completion": 616,
+            "cached": 0,
+            "total": 7597,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 5959,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.3333333333333333,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "JSON.parse(output).verdict === 'NOIR'"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to contain \"fume\"",
+              "assertion": {
+                "type": "contains",
+                "value": "fume"
+              }
+            },
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "57f92292-69a3-4963-93ab-2fa1eec8247d",
+        "latencyMs": 8464,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['bottle', 'rain_on_window', 'cigarette']\nExtrait du Script : JACK : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "label": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "config": {}
+        },
+        "promptId": "cb69bca0ae263492083220775124ec7a930068a3f5585ed852a81f3403de0a00",
+        "promptIdx": 0,
+        "provider": {
+          "id": "google:gemini-2.5-flash",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 90, \"emotion\": \"Désespoir\"},\n  \"analyse_yolo\": \"La bouteille et la cigarette soulignent le désespoir et la tentative d'évasion du personnage, tandis que la pluie sur la fenêtre accentue l'isolement et l'atmosphère oppressante, typique du néo-noir.\",\n  \"script_enrichi\": \"JACK (prenant une longue gorgée de la bouteille de whisky tiède, sa cigarette entre les doigts, le regard fixé sur les gouttes de pluie qui déforment le monde derrière la vitre) : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "prompt": 347,
+            "completion": 163,
+            "total": 2025,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 1515,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "raw": {
+            "candidates": [
+              {
+                "content": {
+                  "parts": [
+                    {
+                      "text": "{\n  \"sentiment\": {\"score\": 90, \"emotion\": \"Désespoir\"},\n  \"analyse_yolo\": \"La bouteille et la cigarette soulignent le désespoir et la tentative d'évasion du personnage, tandis que la pluie sur la fenêtre accentue l'isolement et l'atmosphère oppressante, typique du néo-noir.\",\n  \"script_enrichi\": \"JACK (prenant une longue gorgée de la bouteille de whisky tiède, sa cigarette entre les doigts, le regard fixé sur les gouttes de pluie qui déforment le monde derrière la vitre) : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait.\",\n  \"verdict\": \"NOIR\"\n}"
+                    }
+                  ],
+                  "role": "model"
+                },
+                "finishReason": "STOP",
+                "index": 0
+              }
+            ],
+            "usageMetadata": {
+              "promptTokenCount": 347,
+              "candidatesTokenCount": 163,
+              "totalTokenCount": 2025,
+              "promptTokensDetails": [
+                {
+                  "modality": "TEXT",
+                  "tokenCount": 347
+                }
+              ],
+              "thoughtsTokenCount": 1515
+            },
+            "modelVersion": "gemini-2.5-flash",
+            "responseId": "x4KAaY_KDJir28oP-uzXkAU"
+          },
+          "cached": false,
+          "metadata": {}
+        },
+        "score": 0.3333333333333333,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['bottle', 'rain_on_window', 'cigarette']",
+            "texte_script": "JACK : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait."
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "JSON.parse(output).verdict === 'NOIR'"
+            },
+            {
+              "type": "contains",
+              "value": "fume"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Le script enrichi doit mentionner l'alcool ou la bouteille pour souligner le désespoir."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "objets_detectes": "['bottle', 'rain_on_window', 'cigarette']",
+          "texte_script": "JACK : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "JSON.parse(output).sentiment.score > 70"
+              }
+            },
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "b1c71632-696d-4578-a667-0d02f7be474e",
+        "latencyMs": 14479,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['gun', 'shadow', 'mirror']\nExtrait du Script : ELENA : Regarde-toi. Tu n'es plus que l'ombre de toi-même.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "label": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "config": {}
+        },
+        "promptId": "cb69bca0ae263492083220775124ec7a930068a3f5585ed852a81f3403de0a00",
+        "promptIdx": 0,
+        "provider": {
+          "id": "google:gemini-2.5-flash",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 90, \"emotion\": \"Désespoir\"},\n  \"analyse_yolo\": \"Le 'gun' introduit une menace palpable et une violence latente, typique du Néo-Noir, augmentant drastiquement la tension. Le 'shadow' renforce le thème de la déchéance et de la perte d'identité évoqué par le dialogue, créant une atmosphère oppressante et visuellement sombre. Le 'mirror' force une confrontation psychologique directe, reflétant la dégradation du personnage et son désespoir.\",\n  \"script_enrichi\": \"ELENA (le regard dur, pointant du menton le reflet déformé de LUI dans le miroir, où une ombre épaisse masque la moitié de son visage) : Regarde-toi. Tu n'es plus que l'ombre de toi-même. (LUI, le souffle court, serre convulsivement la crosse du revolver qu'il tient lâchement à ses côtés, son reflet dans le miroir semblant fondre dans l'obscurité ambiante.)\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "prompt": 342,
+            "completion": 246,
+            "total": 3120,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 2532,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "raw": {
+            "candidates": [
+              {
+                "content": {
+                  "parts": [
+                    {
+                      "text": "{\n  \"sentiment\": {\"score\": 90, \"emotion\": \"Désespoir\"},\n  \"analyse_yolo\": \"Le 'gun' introduit une menace palpable et une violence latente, typique du Néo-Noir, augmentant drastiquement la tension. Le 'shadow' renforce le thème de la déchéance et de la perte d'identité évoqué par le dialogue, créant une atmosphère oppressante et visuellement sombre. Le 'mirror' force une confrontation psychologique directe, reflétant la dégradation du personnage et son désespoir.\",\n  \"script_enrichi\": \"ELENA (le regard dur, pointant du menton le reflet déformé de LUI dans le miroir, où une ombre épaisse masque la moitié de son visage) : Regarde-toi. Tu n'es plus que l'ombre de toi-même. (LUI, le souffle court, serre convulsivement la crosse du revolver qu'il tient lâchement à ses côtés, son reflet dans le miroir semblant fondre dans l'obscurité ambiante.)\",\n  \"verdict\": \"NOIR\"\n}"
+                    }
+                  ],
+                  "role": "model"
+                },
+                "finishReason": "STOP",
+                "index": 0
+              }
+            ],
+            "usageMetadata": {
+              "promptTokenCount": 342,
+              "candidatesTokenCount": 246,
+              "totalTokenCount": 3120,
+              "promptTokensDetails": [
+                {
+                  "modality": "TEXT",
+                  "tokenCount": 342
+                }
+              ],
+              "thoughtsTokenCount": 2532
+            },
+            "modelVersion": "gemini-2.5-flash",
+            "responseId": "zYKAacO6DeTA28oPrYCv-QM"
+          },
+          "cached": false,
+          "metadata": {}
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['gun', 'shadow', 'mirror']",
+            "texte_script": "ELENA : Regarde-toi. Tu n'es plus que l'ombre de toi-même."
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "JSON.parse(output).sentiment.score > 70"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Le script doit utiliser le miroir pour une mise en abyme visuelle."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "objets_detectes": "['gun', 'shadow', 'mirror']",
+          "texte_script": "ELENA : Regarde-toi. Tu n'es plus que l'ombre de toi-même."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: sk-proj-********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "5216fa69-a88f-43e3-8c58-8be48e39b56b",
+        "latencyMs": 11653,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['fan', 'blinds']\nExtrait du Script : DETECTIVE : Il fait une chaleur à crever dans ce bureau.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "label": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n",
+          "config": {}
+        },
+        "promptId": "cb69bca0ae263492083220775124ec7a930068a3f5585ed852a81f3403de0a00",
+        "promptIdx": 0,
+        "provider": {
+          "id": "google:gemini-2.5-flash",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Frustration\"},\n  \"analyse_yolo\": \"Le ventilateur accentue l'oppression de la chaleur étouffante et l'inefficacité des tentatives de soulagement. Les stores vénitiens, quant à eux, créent des jeux d'ombres et de lumière artificiels, renforçant le sentiment de confinement et de cynisme propre au néo-noir.\",\n  \"script_enrichi\": \"DETECTIVE : (Le front perlé de sueur, il ajuste inutilement les pales d'un vieux ventilateur de bureau qui ne brasse qu'un air chaud et vicié. Il jette un regard exaspéré vers les stores vénitiens tirés, qui filtrent la lumière du jour en bandes cruelles sur le sol poussiéreux.) Il fait une chaleur à crever dans ce bureau.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "prompt": 333,
+            "completion": 207,
+            "total": 2452,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 1912,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "raw": {
+            "candidates": [
+              {
+                "content": {
+                  "parts": [
+                    {
+                      "text": "{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Frustration\"},\n  \"analyse_yolo\": \"Le ventilateur accentue l'oppression de la chaleur étouffante et l'inefficacité des tentatives de soulagement. Les stores vénitiens, quant à eux, créent des jeux d'ombres et de lumière artificiels, renforçant le sentiment de confinement et de cynisme propre au néo-noir.\",\n  \"script_enrichi\": \"DETECTIVE : (Le front perlé de sueur, il ajuste inutilement les pales d'un vieux ventilateur de bureau qui ne brasse qu'un air chaud et vicié. Il jette un regard exaspéré vers les stores vénitiens tirés, qui filtrent la lumière du jour en bandes cruelles sur le sol poussiéreux.) Il fait une chaleur à crever dans ce bureau.\",\n  \"verdict\": \"NOIR\"\n}"
+                    }
+                  ],
+                  "role": "model"
+                },
+                "finishReason": "STOP",
+                "index": 0
+              }
+            ],
+            "usageMetadata": {
+              "promptTokenCount": 333,
+              "candidatesTokenCount": 207,
+              "totalTokenCount": 2452,
+              "promptTokensDetails": [
+                {
+                  "modality": "TEXT",
+                  "tokenCount": 333
+                }
+              ],
+              "thoughtsTokenCount": 1912
+            },
+            "modelVersion": "gemini-2.5-flash",
+            "responseId": "yoKAaZ_iFpC3nsEPrdH0yQ8"
+          },
+          "cached": false,
+          "metadata": {}
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['fan', 'blinds']",
+            "texte_script": "DETECTIVE : Il fait une chaleur à crever dans ce bureau."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Doit intégrer le ventilateur (fan) ou les stores (blinds) pour créer un effet de lumière 'venetian blinds' typique du noir."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "objets_detectes": "['fan', 'blinds']",
+          "texte_script": "DETECTIVE : Il fait une chaleur à crever dans ce bureau."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 0,
+      "failures": 3,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 1022,
+        "completion": 616,
+        "cached": 0,
+        "total": 7597,
+        "numRequests": 3,
+        "completionDetails": {
+          "reasoning": 5959,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 14696
+    }
+  },
+  "config": {
+    "description": "Moteur d'Intelligence Interactive (YOLO + Script)",
+    "prompts": [
+      "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}\n"
+    ],
+    "providers": [
+      {
+        "id": "google:gemini-2.5-flash",
+        "config": {
+          "apiKey": "AIzaSyDjBiuiueb4_nSHpMD8M-8c-hXmGuLOc9k",
+          "temperature": 0.3,
+          "output": "json"
+        }
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "objets_detectes": "['bottle', 'rain_on_window', 'cigarette']",
+          "texte_script": "JACK : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait."
+        },
+        "assert": [
+          {
+            "type": "javascript",
+            "value": "JSON.parse(output).verdict === 'NOIR'"
+          },
+          {
+            "type": "contains",
+            "value": "fume"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "Le script enrichi doit mentionner l'alcool ou la bouteille pour souligner le désespoir."
+          }
+        ]
+      },
+      {
+        "vars": {
+          "objets_detectes": "['gun', 'shadow', 'mirror']",
+          "texte_script": "ELENA : Regarde-toi. Tu n'es plus que l'ombre de toi-même."
+        },
+        "assert": [
+          {
+            "type": "javascript",
+            "value": "JSON.parse(output).sentiment.score > 70"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "Le script doit utiliser le miroir pour une mise en abyme visuelle."
+          }
+        ]
+      },
+      {
+        "vars": {
+          "objets_detectes": "['fan', 'blinds']",
+          "texte_script": "DETECTIVE : Il fait une chaleur à crever dans ce bureau."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "Doit intégrer le ventilateur (fan) ou les stores (blinds) pour créer un effet de lumière 'venetian blinds' typique du noir."
+          }
+        ]
+      }
+    ],
+    "outputPath": [
+      "results.json"
+    ],
+    "extensions": []
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.20",
+    "nodeVersion": "v20.19.4",
+    "platform": "darwin",
+    "arch": "x64",
+    "exportedAt": "2026-02-02T10:56:13.661Z",
+    "evaluationCreatedAt": "2026-02-02T10:55:58.888Z"
+  }
+}

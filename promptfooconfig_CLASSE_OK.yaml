@@ -1,0 +1,66 @@
+description: "Moteur d'Intelligence Interactive (YOLO + Script)"
+
+prompts:
+  - |
+    Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.
+    
+    📥 DONNÉES EN ENTRÉE :
+    Détection YOLO : {{objets_detectes}}
+    Extrait du Script : {{texte_script}}
+    
+    ⚙️ TA MISSION :
+    1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.
+    2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement (ex: jouer avec, l'utiliser comme arme, se cacher derrière).
+    3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).
+    
+    ESTHÉTIQUE : Cinéma Néo-Noir des années 80/90 (Lumières artificielles, cynisme, violence latente).
+    
+    📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown autour) :
+    {
+      "sentiment": {"score": 0, "emotion": "Nom de l'émotion"},
+      "analyse_yolo": "Explication courte de l'impact de l'objet",
+      "script_enrichi": "Le texte réécrit avec les objets intégrés...",
+      "verdict": "NOIR"
+    }
+
+providers:
+  - id: google:gemini-2.5-flash
+    config:
+      apiKey: "AIzaSyDjBiuiueb4_nSHpMD8M-8c-hXmGuLOc9k"
+      temperature: 0.3
+      output: json
+
+defaultTest:
+  options:
+    provider:
+      id: google:gemini-2.5-flash
+      config:
+        apiKey: "AIzaSyDjBiuiueb4_nSHpMD8M-8c-hXmGuLOc9k"
+
+tests:
+  - vars:
+      objets_detectes: "['bottle', 'rain_on_window', 'cigarette']"
+      texte_script: "JACK : Je ne pensais pas qu'elle reviendrait. Pas après ce que j'ai fait."
+    assert:
+      - type: javascript
+        value: "JSON.parse(output).verdict === 'NOIR'"
+      - type: contains
+        value: "fume"
+      - type: llm-rubric
+        value: "Le script enrichi doit mentionner l'alcool ou la bouteille pour souligner le désespoir."
+
+  - vars:
+      objets_detectes: "['gun', 'shadow', 'mirror']"
+      texte_script: "ELENA : Regarde-toi. Tu n'es plus que l'ombre de toi-même."
+    assert:
+      - type: javascript
+        value: "JSON.parse(output).sentiment.score > 70"
+      - type: llm-rubric
+        value: "Le script doit utiliser le miroir pour une mise en abyme visuelle."
+
+  - vars:
+      objets_detectes: "['fan', 'blinds']"
+      texte_script: "DETECTIVE : Il fait une chaleur à crever dans ce bureau."
+    assert:
+      - type: llm-rubric
+        value: "Doit intégrer le ventilateur (fan) ou les stores (blinds) pour créer un effet de lumière 'venetian blinds' typique du noir."

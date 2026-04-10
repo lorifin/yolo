@@ -1,0 +1,1 @@
+var currentThreshold = 0.5;

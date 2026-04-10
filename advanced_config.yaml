@@ -1,0 +1,49 @@
+description: "Comparaison: Prompt Simple vs Prompt Expert (CoT)"
+
+prompts:
+  - id: basic_analysis
+    label: "V1: Analyse Simple"
+    content: |
+      Analyse le film {{film_title}} sous l'angle du Néo-Noir.
+      Parle de l'éclairage et du cynisme des personnages.
+
+  - id: expert_analysis
+    label: "V2: Expert Cahiers du Cinéma (CoT)"
+    content: |
+      Tu es un critique de cinéma renommé, spécialiste de l'esthétique du Néo-Noir.
+      
+      Tâche : Déconstruis l'esthétique et la morale de : {{film_title}}.
+      
+      Pour réaliser cette analyse, suis ces étapes :
+      1.  **Analyse de la Lumière (Chiaroscuro) :** Ne te contente pas de dire qu'il fait sombre. Analyse comment la lumière *découpe* les visages et isole les personnages. Cherche le "clair-obscur moral".
+      2.  **Architecture du Désespoir :** Comment la ville (ou le décor) écrase-t-elle l'individu ?
+      3.  **Le Cynisme comme Survie :** Analyse les motivations des protagonistes. Est-ce du nihilisme ou un mécanisme de défense ?
+      
+      Format de réponse attendu :
+      Utilise du Markdown structuré avec des titres en gras.
+      Conclus par une phrase synthétisant "l'âme noire" du film.
+
+providers:
+  - id: google:gemini-2.5-flash
+    config:
+      apiKey: "AIzaSyDjBiuiueb4_nSHpMD8M-8c-hXmGuLOc9k"
+      temperature: 0.3
+
+tests:
+  - vars:
+      film_title: "Blade Runner (1982)"
+    assert:
+      - type: contains-any
+        value: ["Tyrell", "lumière artificielle", "pluie acide"]
+  
+  - vars:
+      film_title: "Se7en (1995)"
+    assert:
+      - type: contains-any
+        value: ["Somerset", "péché", "pluie"]
+
+  - vars:
+      film_title: "Drive (2011)"
+    assert:
+      - type: contains
+        value: "néon"

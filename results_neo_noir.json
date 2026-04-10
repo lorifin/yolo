@@ -1,0 +1,1721 @@
+{
+  "evalId": "eval-yru-2026-02-02T20:09:49",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-02-02T20:09:49.250Z",
+    "prompts": [
+      {
+        "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+        "label": "formation/prompts/baseline.txt: Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+        "id": "a6af367415e11fdbd81c81c685b1f55aec6ce03de4eeeb57734fe81c5bd28819",
+        "provider": "openai:gpt-4o",
+        "metrics": {
+          "score": 0.5,
+          "testPassCount": 0,
+          "testFailCount": 3,
+          "testErrorCount": 0,
+          "assertPassCount": 1,
+          "assertFailCount": 4,
+          "totalLatencyMs": 9347,
+          "tokenUsage": {
+            "prompt": 899,
+            "completion": 406,
+            "cached": 0,
+            "total": 1305,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0.006307500000000001
+        }
+      },
+      {
+        "raw": "Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+        "label": "formation/prompts/blade_runner.txt: Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+        "id": "8af6ead028a4ef411a22c75510e2c9327d837a78ef531292bd3cdc7db4ad05bc",
+        "provider": "openai:gpt-4o",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 0,
+          "testFailCount": 3,
+          "testErrorCount": 0,
+          "assertPassCount": 2,
+          "assertFailCount": 3,
+          "totalLatencyMs": 18341,
+          "tokenUsage": {
+            "prompt": 1067,
+            "completion": 755,
+            "cached": 0,
+            "total": 1822,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0.010217500000000001
+        }
+      },
+      {
+        "raw": "Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+        "label": "formation/prompts/drive.txt: Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+        "id": "3d2a49a62eab5405c94d385ee2d7a2f2f24a1754d8b5d5f0b7d385cd0c56f9e0",
+        "provider": "openai:gpt-4o",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 0,
+          "testFailCount": 3,
+          "testErrorCount": 0,
+          "assertPassCount": 2,
+          "assertFailCount": 3,
+          "totalLatencyMs": 14867,
+          "tokenUsage": {
+            "prompt": 944,
+            "completion": 514,
+            "cached": 0,
+            "total": 1458,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0.007500000000000001
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0.0020325000000000005,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "bf60eedb-613d-4610-a822-f1283b9c1a6f",
+        "latencyMs": 3103,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['drone', 'neon_sign', 'noodles']\nExtrait du Script : K : Tout semble faux ici, même la pluie.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/baseline.txt: Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "a6af367415e11fdbd81c81c685b1f55aec6ce03de4eeeb57734fe81c5bd28819",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "```json\n{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Mélancolie\"},\n  \"analyse_yolo\": \"Le drone renforce l'idée de surveillance constante, le néon suggère une ambiance urbaine chaotique, et les nouilles évoquent la banalité de la vie quotidienne.\",\n  \"script_enrichi\": \"K : Tout semble faux ici, même la pluie, alors qu'un drone survole silencieusement, son reflet déformé par le néon clignotant d'un restaurant de nouilles.\",\n  \"verdict\": \"NOIR\"\n}\n```",
+          "tokenUsage": {
+            "total": 426,
+            "prompt": 297,
+            "completion": 129,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 3103,
+          "finishReason": "stop",
+          "cost": 0.0020325000000000005,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c5413897e11ff-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:52 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "2863",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=QIKSRbNFhzjPGGvyVIzdEnmglz7yEc4W9D_ltZtdpq4-1770062992383-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29749",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "502ms",
+                "x-request-id": "req_e5ffe9e3949449508e510300c574c45b"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+            "texte_script": "K : Tout semble faux ici, même la pluie."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'atmosphère doit être futuriste et mélancolique."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+          "texte_script": "K : Tout semble faux ici, même la pluie."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c5413897e11ff-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:52 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "2863",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=QIKSRbNFhzjPGGvyVIzdEnmglz7yEc4W9D_ltZtdpq4-1770062992383-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29749",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "502ms",
+              "x-request-id": "req_e5ffe9e3949449508e510300c574c45b"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0037125,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "c86afc20-bd0d-461d-838e-9a6afa2b6af8",
+        "latencyMs": 6345,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['drone', 'neon_sign', 'noodles']\nExtrait du Script : K : Tout semble faux ici, même la pluie.\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/blade_runner.txt: Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "8af6ead028a4ef411a22c75510e2c9327d837a78ef531292bd3cdc7db4ad05bc",
+        "promptIdx": 1,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 85, \"emotion\": \"Aliénation\"},\n  \"analyse_yolo\": \"Le drone plane silencieusement, une sentinelle métallique dans un ciel saturé de néons criards, épiant chaque mouvement dans les ruelles sombres. Les enseignes au néon, clignotant dans une symphonie discordante, jettent des reflets acides sur les flaques d'eau qui s'étendent comme des miroirs déformés de la réalité. Les nouilles, dans leur bol fumant, semblent plus réelles que la vie elle-même, un réconfort au milieu de ce chaos artificiel.\",\n  \"script_enrichi\": \"K se tenait sous la pluie battante, ses vêtements trempés collant à sa peau, chaque goutte semblant s'enfoncer dans son âme. Il regarda autour de lui, les drones bourdonnant au-dessus de sa tête, ombres mécaniques contre le ciel saturé de néons. Les enseignes clignotaient, projetant des éclats de lumière sur la chaussée luisante, tandis que l'odeur des nouilles flottaient dans l'air, une promesse d'évasion dans ce monde où tout semblait faux, même la pluie.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "total": 636,
+            "prompt": 353,
+            "completion": 283,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 6345,
+          "finishReason": "stop",
+          "cost": 0.0037125,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54137c919ef1-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:55 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "6126",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=2n2q4PraiY.9vnXG1rSkCpOqPIF7EGsRj7xGMWZbXn0-1770062995644-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29706",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "588ms",
+                "x-request-id": "req_bd4c6d6167494ac48572222f82765185"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+            "texte_script": "K : Tout semble faux ici, même la pluie."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'atmosphère doit être futuriste et mélancolique."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+          "texte_script": "K : Tout semble faux ici, même la pluie."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54137c919ef1-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:55 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "6126",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=2n2q4PraiY.9vnXG1rSkCpOqPIF7EGsRj7xGMWZbXn0-1770062995644-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29706",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "588ms",
+              "x-request-id": "req_bd4c6d6167494ac48572222f82765185"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0028600000000000006,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "aefd45dc-3d5e-4019-b108-e3027c9cb3d0",
+        "latencyMs": 7185,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['drone', 'neon_sign', 'noodles']\nExtrait du Script : K : Tout semble faux ici, même la pluie.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/drive.txt: Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "3d2a49a62eab5405c94d385ee2d7a2f2f24a1754d8b5d5f0b7d385cd0c56f9e0",
+        "promptIdx": 2,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "```json\n{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Tension latente\"},\n  \"analyse_yolo\": \"Le drone survole la scène, son vrombissement se mêle au silence oppressant. L'enseigne néon clignote, projetant une lueur intermittente sur les visages. Les nouilles, fumantes, ajoutent une touche de vie dans cet univers figé, comme un souffle chaud dans la nuit froide.\",\n  \"script_enrichi\": \"K : Tout semble faux ici, même la pluie. Le bourdonnement du drone s'arrête un instant, laissant place à un silence lourd. Seules les gouttes, étrangement régulières, rappellent leur présence. Les lumières néon dansent sur les flaques, créant des reflets mouvants. Une portion de nouilles abandonne sa vapeur, s'élevant paresseusement vers un ciel indifférent.\",\n  \"verdict\": \"NOIR\"\n}\n```",
+          "tokenUsage": {
+            "total": 520,
+            "prompt": 312,
+            "completion": 208,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 7185,
+          "finishReason": "stop",
+          "cost": 0.0028600000000000006,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54138f62bb7e-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:56 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "6898",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=yTGh8kYUUi9qHcxi2OmVSuhdAXppvPyIzpC4jvdG_sY-1770062996485-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29747",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "506ms",
+                "x-request-id": "req_f00b076c66f247e59bbda196e83a7d89"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+            "texte_script": "K : Tout semble faux ici, même la pluie."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'atmosphère doit être futuriste et mélancolique."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+          "texte_script": "K : Tout semble faux ici, même la pluie."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54138f62bb7e-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:56 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "6898",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=yTGh8kYUUi9qHcxi2OmVSuhdAXppvPyIzpC4jvdG_sY-1770062996485-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29747",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "506ms",
+              "x-request-id": "req_f00b076c66f247e59bbda196e83a7d89"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0022625,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nconst clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "a2e35ad0-823e-4176-b823-61e79068083f",
+        "latencyMs": 3490,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['steering_wheel', 'leather_glove', 'hammer']\nExtrait du Script : DRIVER : (Silence). Je conduis. C'est tout ce que je fais.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/baseline.txt: Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "a6af367415e11fdbd81c81c685b1f55aec6ce03de4eeeb57734fe81c5bd28819",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "```json\n{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Tension\"},\n  \"analyse_yolo\": \"La présence du 'steering_wheel' et du 'leather_glove' accentue l'aspect menaçant et contrôlé de la scène, tandis que le 'hammer' introduit une tension latente et potentiellement violente.\",\n  \"script_enrichi\": \"DRIVER : (Silence). Je conduis, mes mains gantées de cuir fermement posées sur le volant. Le marteau repose sur le siège passager, prêt, silencieux mais lourd de signification. C'est tout ce que je fais.\",\n  \"verdict\": \"NOIR\"\n}\n```",
+          "tokenUsage": {
+            "total": 455,
+            "prompt": 305,
+            "completion": 150,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 3490,
+          "finishReason": "stop",
+          "cost": 0.0022625,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54138c6c9e8b-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:52 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "3250",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=GVz7tWl8TshSxTtQR_RSo1Zs8qLtj8fEL1fREp3UV4E-1770062992791-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29742",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "516ms",
+                "x-request-id": "req_34695235c02645a5881cdf8da43fccba"
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+            "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Le script enrichi doit mettre en valeur le silence et la tension du conducteur."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+          "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54138c6c9e8b-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:52 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "3250",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=GVz7tWl8TshSxTtQR_RSo1Zs8qLtj8fEL1fREp3UV4E-1770062992791-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29742",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "516ms",
+              "x-request-id": "req_34695235c02645a5881cdf8da43fccba"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.00232,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "303bc096-a68a-464d-b713-e0c2684962e3",
+        "latencyMs": 3631,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['steering_wheel', 'leather_glove', 'hammer']\nExtrait du Script : DRIVER : (Silence). Je conduis. C'est tout ce que je fais.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/drive.txt: Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "3d2a49a62eab5405c94d385ee2d7a2f2f24a1754d8b5d5f0b7d385cd0c56f9e0",
+        "promptIdx": 2,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 85, \"emotion\": \"Tension sous-jacente\"},\n  \"analyse_yolo\": \"Le volant est le contrôle absolu, le gant de cuir est la promesse d'une action précise, et le marteau est la violence prête à éclater.\",\n  \"script_enrichi\": \"DRIVER : (Silence). Je conduis. C'est tout ce que je fais. Le cuir du gant crisse doucement sur le volant, un murmure presque imperceptible dans l'obscurité. Le marteau repose sur le siège passager, un témoin silencieux, menaçant comme l'orage prêt à éclater.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "total": 472,
+            "prompt": 320,
+            "completion": 152,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 3631,
+          "finishReason": "stop",
+          "cost": 0.00232,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c542ae9910179-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:56 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "3345",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=YdOBZVGVZiMCV7AZ8yiP7g3Awc52lQxC6Rwf8brxCE8-1770062996683-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29740",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "520ms",
+                "x-request-id": "req_890351db7cdb4b4286d44e4db423b871"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+            "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Le script enrichi doit mettre en valeur le silence et la tension du conducteur."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+          "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c542ae9910179-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:56 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "3345",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=YdOBZVGVZiMCV7AZ8yiP7g3Awc52lQxC6Rwf8brxCE8-1770062996683-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29740",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "520ms",
+              "x-request-id": "req_890351db7cdb4b4286d44e4db423b871"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0035725,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+              }
+            }
+          ]
+        },
+        "id": "1ca0627f-1535-4685-878a-4fba201be645",
+        "latencyMs": 6154,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['steering_wheel', 'leather_glove', 'hammer']\nExtrait du Script : DRIVER : (Silence). Je conduis. C'est tout ce que je fais.\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/blade_runner.txt: Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "8af6ead028a4ef411a22c75510e2c9327d837a78ef531292bd3cdc7db4ad05bc",
+        "promptIdx": 1,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 85, \"emotion\": \"Aliénation\"},\n  \"analyse_yolo\": \"Le volant, symbole du contrôle, devient un artefact rouillé, témoignant de la lutte pour garder la maîtrise dans un monde chaotique. Le gant de cuir, usé et patiné, est l'extension de la main solitaire du conducteur, protégeant contre le froid indifférent de la ville. Le marteau, outil de destruction ou de création, pend tel un rappel constant de la violence sous-jacente.\",\n  \"script_enrichi\": \"Le conducteur reste silencieux, contemplant l'obscurité qui l'entoure, tandis que la pluie martèle le pare-brise comme autant de larmes d'une ville en décomposition. Les néons saturés projettent des éclairs de lumière crue sur le cuir usé de son gant, chaque goutte d'eau reflétant une lueur spectrale. Le volant, froid sous sa prise, résonne comme le dernier bastion de son contrôle dans cette jungle urbaine. Le marteau, suspendu à portée de main, semble murmurer des promesses de chaos dans la cacophonie silencieuse de la nuit.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "total": 628,
+            "prompt": 361,
+            "completion": 267,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 6154,
+          "finishReason": "stop",
+          "cost": 0.0035725,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54289fdb014f-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:58 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "5936",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=vxFxaDu9YbZDFa2Omrgwm8ARLaRsyOfr5UqH718Hbvk-1770062998831-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29699",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "602ms",
+                "x-request-id": "req_aea4aaf33a1f4e9c845f91b235d089b1"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+            "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Le script enrichi doit mettre en valeur le silence et la tension du conducteur."
+            },
+            {
+              "type": "javascript",
+              "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+          "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54289fdb014f-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:58 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "5936",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=vxFxaDu9YbZDFa2Omrgwm8ARLaRsyOfr5UqH718Hbvk-1770062998831-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29699",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "602ms",
+              "x-request-id": "req_aea4aaf33a1f4e9c845f91b235d089b1"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0020125000000000004,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "5d36a6de-b40a-476d-8d7a-4cb65c0aebce",
+        "latencyMs": 2754,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['fan', 'blinds', 'smoke']\nExtrait du Script : DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/baseline.txt: Agis comme le moteur d'intelligence d'un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l'émotion dominante.\n2. **Enrichissement par l'Objet** : Utilise les objets détectés pour modifier les didascalies. L'objet DOIT être intégré activement.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit avec les objets intégrés...\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "a6af367415e11fdbd81c81c685b1f55aec6ce03de4eeeb57734fe81c5bd28819",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "```json\n{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Frustration\"},\n  \"analyse_yolo\": \"Les objets, tels qu'un ventilateur, des stores et de la fumée, renforcent l'atmosphère oppressante et étouffante.\",\n  \"script_enrichi\": \"DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur tourne lentement, peinant à disperser la fumée épaisse qui s'accumule sous les stores à moitié baissés.\",\n  \"verdict\": \"NOIR\"\n}\n```",
+          "tokenUsage": {
+            "total": 424,
+            "prompt": 297,
+            "completion": 127,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 2754,
+          "finishReason": "stop",
+          "cost": 0.0020125000000000004,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c543c8860d915-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:09:58 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "2539",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=yiiEBwot.tFeCZ0i4aAbcxnxL5v8g8dlThB_k3fuVOQ-1770062998621-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29617",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "765ms",
+                "x-request-id": "req_7e4302e004084b41b892bb3d2f1b5ecc"
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['fan', 'blinds', 'smoke']",
+            "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'ambiance doit être étouffante, classique film noir avec une touche moderne."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "objets_detectes": "['fan', 'blinds', 'smoke']",
+          "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c543c8860d915-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:09:58 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "2539",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=yiiEBwot.tFeCZ0i4aAbcxnxL5v8g8dlThB_k3fuVOQ-1770062998621-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29617",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "765ms",
+              "x-request-id": "req_7e4302e004084b41b892bb3d2f1b5ecc"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.00232,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "2f69a85b-50cf-4362-b997-6f7ecc505148",
+        "latencyMs": 4051,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['fan', 'blinds', 'smoke']\nExtrait du Script : DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou.\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/drive.txt: Agis comme le moteur d'intelligence d'un film Néo-Noir stylisé type \"Drive\". Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d'une violence latente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\n1. **Analyse de Sentiment** : Tension (0-100). Privilégie le \"Cool\" détaché et la menace silencieuse.\n2. **Enrichissement par l'Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Drive\" - Minimaliste, synth-pop, urbain nocturne, isolant.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet\",\n  \"script_enrichi\": \"Le texte réécrit... (focus sur le rythme et le silence)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "3d2a49a62eab5405c94d385ee2d7a2f2f24a1754d8b5d5f0b7d385cd0c56f9e0",
+        "promptIdx": 2,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 75, \"emotion\": \"Tension silencieuse\"},\n  \"analyse_yolo\": \"Le ventilateur tourne lentement, brassant l'air chaud et épais, les stores filtrent une lumière artificielle, créant des ombres mouvantes, tandis que la fumée danse paresseusement, étouffant le silence.\",\n  \"script_enrichi\": \"DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur ronronne, indifférent, et les stores jouent à cache-cache avec les néons extérieurs. La fumée s'élève, lente et hypnotique, comme un rêve sous la surface.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "total": 466,
+            "prompt": 312,
+            "completion": 154,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 4051,
+          "finishReason": "stop",
+          "cost": 0.00232,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54439980d114-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:10:01 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "3730",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=a3_C1NVX6wrK9KXfXisOPvxVUZcdbUmjKPuils.urGk-1770063001010-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29623",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "752ms",
+                "x-request-id": "req_b59bacc836184217af083d33f365b251"
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['fan', 'blinds', 'smoke']",
+            "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'ambiance doit être étouffante, classique film noir avec une touche moderne."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "objets_detectes": "['fan', 'blinds', 'smoke']",
+          "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54439980d114-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:10:01 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "3730",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=a3_C1NVX6wrK9KXfXisOPvxVUZcdbUmjKPuils.urGk-1770063001010-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29623",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "752ms",
+              "x-request-id": "req_b59bacc836184217af083d33f365b251"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0029325,
+        "error": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "reason": "API error: 401 Unauthorized\n{\"error\":{\"message\":\"Incorrect API key provided: REDACTED********************************************************************************************************************************************************M04A. You can find your API key at https://platform.openai.com/account/api-keys.\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\",\"param\":null},\"status\":401}",
+              "score": 0,
+              "tokensUsed": {
+                "total": 0,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 0,
+                "numRequests": 0
+              }
+            }
+          ]
+        },
+        "id": "35ef5ad2-60e5-4128-93b0-54c51d1442b7",
+        "latencyMs": 5842,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : ['fan', 'blinds', 'smoke']\nExtrait du Script : DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou.\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "label": "formation/prompts/blade_runner.txt: Agis comme le moteur d'intelligence d'un film Cyberpunk Néo-Noir. Ton univers est celui de \"Blade Runner\" : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.\n\n📥 DONNÉES EN ENTRÉE :\nDétection YOLO : {{objets_detectes}}\nExtrait du Script : {{texte_script}}\n\n⚙️ TA MISSION :\nFusionne les objets et le script pour créer une atmosphère oppressante et artificielle.\n1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l'aliénation.\n2. **Enrichissement par l'Objet** : Intègre les objets comme s'ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.\n3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).\n\nESTHÉTIQUE : \"Blade Runner\" - High Tech, Low Life. Lumière crue, ombres profondes.\n\n📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :\n{\n  \"sentiment\": {\"score\": 0, \"emotion\": \"Nom de l'émotion\"},\n  \"analyse_yolo\": \"Explication courte de l'impact de l'objet (focus atmosphère)\",\n  \"script_enrichi\": \"Le texte réécrit... (insiste sur l'ambiance visuelle)\",\n  \"verdict\": \"NOIR\"\n}",
+          "config": {}
+        },
+        "promptId": "8af6ead028a4ef411a22c75510e2c9327d837a78ef531292bd3cdc7db4ad05bc",
+        "promptIdx": 1,
+        "provider": {
+          "id": "openai:gpt-4o",
+          "label": ""
+        },
+        "response": {
+          "output": "{\n  \"sentiment\": {\"score\": 85, \"emotion\": \"Aliénation\"},\n  \"analyse_yolo\": \"Un ventilateur fatigué tourne lentement, projetant une lumière vacillante à travers les stores poussiéreux, tandis que la fumée se mêle à l'air lourd, créant une atmosphère suffocante de désespoir urbain.\",\n  \"script_enrichi\": \"DETECTIVE : La chaleur oppressive de cet antre obscur m'écrase, chaque souffle de fumée me rappelant l'artificialité de ce monde. Le ventilateur, relique d'un passé industriel, peine à brasser l'air vicié. Les stores, usés et jaunis, laissent filtrer des éclats de néons criards, se reflétant sur les flaques d'eau stagnantes formées par la pluie incessante. Ce lieu est une prison de métal et de lumière froide.\",\n  \"verdict\": \"NOIR\"\n}",
+          "tokenUsage": {
+            "total": 558,
+            "prompt": 353,
+            "completion": 205,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            }
+          },
+          "cached": false,
+          "latencyMs": 5842,
+          "finishReason": "stop",
+          "cost": 0.0029325,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9c7c54426ed500b7-CDG",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Mon, 02 Feb 2026 20:10:02 GMT",
+                "openai-organization": "agile-change",
+                "openai-processing-ms": "5587",
+                "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+                "openai-version": "2020-10-01",
+                "server": "cloudflare",
+                "set-cookie": "_cfuvid=kvuwJMFWUUL.ejVwG2Mi.od_lUEKD2nRfojKnR9bOTk-1770063002614-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "v0.1",
+                "x-ratelimit-limit-requests": "500",
+                "x-ratelimit-limit-tokens": "30000",
+                "x-ratelimit-remaining-requests": "499",
+                "x-ratelimit-remaining-tokens": "29703",
+                "x-ratelimit-reset-requests": "120ms",
+                "x-ratelimit-reset-tokens": "594ms",
+                "x-request-id": "req_329f961f7e9046ea8a61f0b25b10ce99"
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "objets_detectes": "['fan', 'blinds', 'smoke']",
+            "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "L'ambiance doit être étouffante, classique film noir avec une touche moderne."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "objets_detectes": "['fan', 'blinds', 'smoke']",
+          "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9c7c54426ed500b7-CDG",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Mon, 02 Feb 2026 20:10:02 GMT",
+              "openai-organization": "agile-change",
+              "openai-processing-ms": "5587",
+              "openai-project": "proj_ZpKDpiVcR10HwFO5sV7cBN5z",
+              "openai-version": "2020-10-01",
+              "server": "cloudflare",
+              "set-cookie": "_cfuvid=kvuwJMFWUUL.ejVwG2Mi.od_lUEKD2nRfojKnR9bOTk-1770063002614-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "v0.1",
+              "x-ratelimit-limit-requests": "500",
+              "x-ratelimit-limit-tokens": "30000",
+              "x-ratelimit-remaining-requests": "499",
+              "x-ratelimit-remaining-tokens": "29703",
+              "x-ratelimit-reset-requests": "120ms",
+              "x-ratelimit-reset-tokens": "594ms",
+              "x-request-id": "req_329f961f7e9046ea8a61f0b25b10ce99"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 0,
+      "failures": 9,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 2910,
+        "completion": 1675,
+        "cached": 0,
+        "total": 4585,
+        "numRequests": 9,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 13562
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "Evaluation Néo-Noir : Blade Runner vs Drive",
+    "prompts": [
+      "prompts/baseline.txt",
+      "prompts/blade_runner.txt",
+      "prompts/drive.txt"
+    ],
+    "providers": [
+      {
+        "id": "openai:gpt-4o",
+        "config": {
+          "apiKey": "REDACTED",
+          "temperature": 0.7
+        }
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "objets_detectes": "['drone', 'neon_sign', 'noodles']",
+          "texte_script": "K : Tout semble faux ici, même la pluie."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "L'atmosphère doit être futuriste et mélancolique."
+          },
+          {
+            "type": "javascript",
+            "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).verdict === 'NOIR';\n} catch (e) {\n  return false;\n}\n"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "objets_detectes": "['steering_wheel', 'leather_glove', 'hammer']",
+          "texte_script": "DRIVER : (Silence). Je conduis. C'est tout ce que je fais."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "Le script enrichi doit mettre en valeur le silence et la tension du conducteur."
+          },
+          {
+            "type": "javascript",
+            "value": "const clean = output.replace(/```json/g, '').replace(/```/g, '').trim();\ntry {\n  return JSON.parse(clean).sentiment.score > 75;\n} catch (e) {\n  return false;\n}\n"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "objets_detectes": "['fan', 'blinds', 'smoke']",
+          "texte_script": "DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "L'ambiance doit être étouffante, classique film noir avec une touche moderne."
+          }
+        ]
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "outputPath": [
+      "formation/results_neo_noir.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {}
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.20",
+    "nodeVersion": "v20.19.4",
+    "platform": "darwin",
+    "arch": "x64",
+    "exportedAt": "2026-02-02T20:10:02.954Z",
+    "evaluationCreatedAt": "2026-02-02T20:09:49.250Z"
+  }
+}

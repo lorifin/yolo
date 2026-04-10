@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Evaluation Néo-Noir : Blade Runner vs Drive</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-wrap;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>objets_detectes</th>
+        
+        <th>texte_script</th>
+        
+        <th>[openai:gpt-4o] formation/prompts/baseline.txt: Agis comme le moteur d&#39;intelligence d&#39;un système de réalisation cinématographique interactive. Ton rôle est de fusionner des données visuelles (YOLO) et textuelles (Script) pour créer une analyse de scène cohérente.
+
+📥 DONNÉES EN ENTRÉE :
+Détection YOLO : {{objets_detectes}}
+Extrait du Script : {{texte_script}}
+
+⚙️ TA MISSION :
+1. **Analyse de Sentiment** : Évalue la tension dramatique (0-100) et l&#39;émotion dominante.
+2. **Enrichissement par l&#39;Objet** : Utilise les objets détectés pour modifier les didascalies. L&#39;objet DOIT être intégré activement.
+3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).
+
+ESTHÉTIQUE : Cinéma Néo-Noir des années 80/90.
+
+📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :
+{
+  &quot;sentiment&quot;: {&quot;score&quot;: 0, &quot;emotion&quot;: &quot;Nom de l&#39;émotion&quot;},
+  &quot;analyse_yolo&quot;: &quot;Explication courte de l&#39;impact de l&#39;objet&quot;,
+  &quot;script_enrichi&quot;: &quot;Le texte réécrit avec les objets intégrés...&quot;,
+  &quot;verdict&quot;: &quot;NOIR&quot;
+}</th>
+        
+        <th>[openai:gpt-4o] formation/prompts/blade_runner.txt: Agis comme le moteur d&#39;intelligence d&#39;un film Cyberpunk Néo-Noir. Ton univers est celui de &quot;Blade Runner&quot; : pluie incessante, néons saturés, décadence urbaine et technologie omniprésente.
+
+📥 DONNÉES EN ENTRÉE :
+Détection YOLO : {{objets_detectes}}
+Extrait du Script : {{texte_script}}
+
+⚙️ TA MISSION :
+Fusionne les objets et le script pour créer une atmosphère oppressante et artificielle.
+1. **Analyse de Sentiment** : Tension (0-100). Cherche la mélancolie ou l&#39;aliénation.
+2. **Enrichissement par l&#39;Objet** : Intègre les objets comme s&#39;ils étaient des artefacts futuristes ou des témoins de la déchéance. La lumière et la texture (pluie, fumée) sont cruciales.
+3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).
+
+ESTHÉTIQUE : &quot;Blade Runner&quot; - High Tech, Low Life. Lumière crue, ombres profondes.
+
+📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :
+{
+  &quot;sentiment&quot;: {&quot;score&quot;: 0, &quot;emotion&quot;: &quot;Nom de l&#39;émotion&quot;},
+  &quot;analyse_yolo&quot;: &quot;Explication courte de l&#39;impact de l&#39;objet (focus atmosphère)&quot;,
+  &quot;script_enrichi&quot;: &quot;Le texte réécrit... (insiste sur l&#39;ambiance visuelle)&quot;,
+  &quot;verdict&quot;: &quot;NOIR&quot;
+}</th>
+        
+        <th>[openai:gpt-4o] formation/prompts/drive.txt: Agis comme le moteur d&#39;intelligence d&#39;un film Néo-Noir stylisé type &quot;Drive&quot;. Ton univers est silencieux, tendu, baigné de lumières néons (rose, bleu) et d&#39;une violence latente.
+
+📥 DONNÉES EN ENTRÉE :
+Détection YOLO : {{objets_detectes}}
+Extrait du Script : {{texte_script}}
+
+⚙️ TA MISSION :
+1. **Analyse de Sentiment** : Tension (0-100). Privilégie le &quot;Cool&quot; détaché et la menace silencieuse.
+2. **Enrichissement par l&#39;Objet** : Les objets sont des extensions des personnages. Utilise-les pour ralentir le temps ou accentuer le silence.
+3. **Verdict Néo-Noir** : (NOIR, GRIS, CLAIR).
+
+ESTHÉTIQUE : &quot;Drive&quot; - Minimaliste, synth-pop, urbain nocturne, isolant.
+
+📤 FORMAT DE RÉPONSE (JSON STRICT, pas de markdown) :
+{
+  &quot;sentiment&quot;: {&quot;score&quot;: 0, &quot;emotion&quot;: &quot;Nom de l&#39;émotion&quot;},
+  &quot;analyse_yolo&quot;: &quot;Explication courte de l&#39;impact de l&#39;objet&quot;,
+  &quot;script_enrichi&quot;: &quot;Le texte réécrit... (focus sur le rythme et le silence)&quot;,
+  &quot;verdict&quot;: &quot;NOIR&quot;
+}</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="[&#39;drone&#39;, &#39;neon_sign&#39;, &#39;noodles&#39;]">[&#39;drone&#39;, &#39;neon_sign&#39;, &#39;noodles&#39;]</td>
+          
+          <td data-content="K : Tout semble faux ici, même la pluie.">K : Tout semble faux ici, même la pluie.</td>
+          
+          <td data-content="[PASS] (1.00)
+
+    ```json
+{
+&quot;sentiment&quot;: {
+  &quot;score&quot;: 75,
+  &quot;emotion&quot;: &quot;Nostalgie&quot;
+},
+&quot;analyse_yolo&quot;: &quot;Les objets détectés accentuent l&#39;ambiance urbaine et technologique, typique du néo-noir.&quot;,
+&quot;script_enrichi&quot;: &quot;K : Tout semble faux ici, même la pluie qui tombe doucement sur le drone errant au-dessus de nous. Les néons clignotent, reflétant leurs lumières colorées sur les flaques d&#39;eau, tandis que l&#39;odeur des nouilles flottant dans l&#39;air achève de brouiller la frontière entre réalité et illusion.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Pass Reason: All assertions passed">[PASS] (1.00)
+
+    ```json
+{
+&quot;sentiment&quot;: {
+  &quot;score&quot;: 75,
+  &quot;emotion&quot;: &quot;Nostalgie&quot;
+},
+&quot;analyse_yolo&quot;: &quot;Les objets détectés accentuent l&#39;ambiance urbaine et technologique, typique du néo-noir.&quot;,
+&quot;script_enrichi&quot;: &quot;K : Tout semble faux ici, même la pluie qui tombe doucement sur le drone errant au-dessus de nous. Les néons clignotent, reflétant leurs lumières colorées sur les flaques d&#39;eau, tandis que l&#39;odeur des nouilles flottant dans l&#39;air achève de brouiller la frontière entre réalité et illusion.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Pass Reason: All assertions passed</td>
+          
+          <td data-content="[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 85, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le drone, insensible et omniprésent, survole la scène, ses lentilles capturant la décadence d&#39;une ville déchue. Les néons clignotants des enseignes éclairent les flaques d&#39;eau sur le bitume, créant des reflets distordus de mondes artificiels. Un bol de nouilles fumant, abandonné sous la pluie, témoigne du passage d&#39;une humanité pressée, trop occupée pour s&#39;arrêter.&quot;,
+&quot;script_enrichi&quot;: &quot;K : Tout semble faux ici, même la pluie. Les gouttes tombent en cadence, martelant le sol, alors qu&#39;un drone silencieux glisse entre les gratte-ciels, épiant chaque mouvement. Les néons des enseignes saturent l&#39;air d&#39;une lueur artificielle, projetant des ombres mouvantes sur les visages fatigués. Dans un coin, un bol de nouilles refroidit lentement, oublié sous cette averse interminable, symbole d&#39;un moment de répit dans un monde qui ne s&#39;arrête jamais.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed">[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 85, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le drone, insensible et omniprésent, survole la scène, ses lentilles capturant la décadence d&#39;une ville déchue. Les néons clignotants des enseignes éclairent les flaques d&#39;eau sur le bitume, créant des reflets distordus de mondes artificiels. Un bol de nouilles fumant, abandonné sous la pluie, témoigne du passage d&#39;une humanité pressée, trop occupée pour s&#39;arrêter.&quot;,
+&quot;script_enrichi&quot;: &quot;K : Tout semble faux ici, même la pluie. Les gouttes tombent en cadence, martelant le sol, alors qu&#39;un drone silencieux glisse entre les gratte-ciels, épiant chaque mouvement. Les néons des enseignes saturent l&#39;air d&#39;une lueur artificielle, projetant des ombres mouvantes sur les visages fatigués. Dans un coin, un bol de nouilles refroidit lentement, oublié sous cette averse interminable, symbole d&#39;un moment de répit dans un monde qui ne s&#39;arrête jamais.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed</td>
+          
+          <td data-content="[PASS] (1.00)
+
+    ```json
+{
+&quot;sentiment&quot;: {&quot;score&quot;: 85, &quot;emotion&quot;: &quot;Tension Latente&quot;},
+&quot;analyse_yolo&quot;: &quot;Le drone plane silencieusement, une menace invisible. Le néon éclaire le visage de K d&#39;un éclat rose et bleu, accentuant son détachement. Les nouilles, abandonnées, refroidissent lentement, témoins muets de l&#39;attente.&quot;,
+&quot;script_enrichi&quot;: &quot;K observe le ciel, le drone silencieux reflétant les néons criards. Chaque goutte de pluie semble suspendue dans l&#39;air, figée dans le temps. Tout ici semble faux, même la pluie, comme une scène au ralenti. K reste immobile, le silence pesant, chaque seconde s&#39;étirant en une éternité.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Pass Reason: All assertions passed">[PASS] (1.00)
+
+    ```json
+{
+&quot;sentiment&quot;: {&quot;score&quot;: 85, &quot;emotion&quot;: &quot;Tension Latente&quot;},
+&quot;analyse_yolo&quot;: &quot;Le drone plane silencieusement, une menace invisible. Le néon éclaire le visage de K d&#39;un éclat rose et bleu, accentuant son détachement. Les nouilles, abandonnées, refroidissent lentement, témoins muets de l&#39;attente.&quot;,
+&quot;script_enrichi&quot;: &quot;K observe le ciel, le drone silencieux reflétant les néons criards. Chaque goutte de pluie semble suspendue dans l&#39;air, figée dans le temps. Tout ici semble faux, même la pluie, comme une scène au ralenti. K reste immobile, le silence pesant, chaque seconde s&#39;étirant en une éternité.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&#39;steering_wheel&#39;, &#39;leather_glove&#39;, &#39;hammer&#39;]">[&#39;steering_wheel&#39;, &#39;leather_glove&#39;, &#39;hammer&#39;]</td>
+          
+          <td data-content="DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais.">DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais.</td>
+          
+          <td data-content="[FAIL] (0.50)
+
+    ```json
+{
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension sous-jacente&quot;},
+&quot;analyse_yolo&quot;: &quot;Le volant, le gant en cuir et le marteau créent une atmosphère de danger imminent et de violence potentielle.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais. Sa main gantée serre fermement le volant, tandis que son autre main repose près d&#39;un marteau, prêt à être utilisé.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}">[FAIL] (0.50)
+
+    ```json
+{
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension sous-jacente&quot;},
+&quot;analyse_yolo&quot;: &quot;Le volant, le gant en cuir et le marteau créent une atmosphère de danger imminent et de violence potentielle.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais. Sa main gantée serre fermement le volant, tandis que son autre main repose près d&#39;un marteau, prêt à être utilisé.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+```
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}</td>
+          
+          <td data-content="[FAIL] (0.50)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le &#39;steering_wheel&#39; est le dernier bastion de contrôle dans un monde chaotique, une relique de l&#39;ancien monde. Le &#39;leather_glove&#39; est un symbole d&#39;une humanité artificielle, usée par le temps et les intempéries. Le &#39;hammer&#39; évoque une violence latente, à peine contenue sous la surface lisse de la ville.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis, les néons ruisselant sur le pare-brise comme des larmes de verre liquide. C&#39;est tout ce que je fais, les gants de cuir glissent sur le volant usé, tandis que la pluie martèle la cabine, une symphonie froide et distante. À mes pieds, un marteau repose, lourd de promesses non tenues et de violence à peine retenue. Les ombres dansent sur les murs, projetées par les lumières crues de la ville, où l&#39;humanité se perd dans ses reflets.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}">[FAIL] (0.50)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le &#39;steering_wheel&#39; est le dernier bastion de contrôle dans un monde chaotique, une relique de l&#39;ancien monde. Le &#39;leather_glove&#39; est un symbole d&#39;une humanité artificielle, usée par le temps et les intempéries. Le &#39;hammer&#39; évoque une violence latente, à peine contenue sous la surface lisse de la ville.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis, les néons ruisselant sur le pare-brise comme des larmes de verre liquide. C&#39;est tout ce que je fais, les gants de cuir glissent sur le volant usé, tandis que la pluie martèle la cabine, une symphonie froide et distante. À mes pieds, un marteau repose, lourd de promesses non tenues et de violence à peine retenue. Les ombres dansent sur les murs, projetées par les lumières crues de la ville, où l&#39;humanité se perd dans ses reflets.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}</td>
+          
+          <td data-content="[FAIL] (0.50)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension Silencieuse&quot;},
+&quot;analyse_yolo&quot;: &quot;Le volant incarne le contrôle total, le gant de cuir évoque une froideur calculée, et le marteau promet une violence imminente.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais. Le cuir du gant crisse doucement contre le volant, chaque mouvement mesuré. Le marteau repose, lourd, sur le siège passager, une promesse muette dans la lumière néon.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}">[FAIL] (0.50)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension Silencieuse&quot;},
+&quot;analyse_yolo&quot;: &quot;Le volant incarne le contrôle total, le gant de cuir évoque une froideur calculée, et le marteau promet une violence imminente.&quot;,
+&quot;script_enrichi&quot;: &quot;DRIVER : (Silence). Je conduis. C&#39;est tout ce que je fais. Le cuir du gant crisse doucement contre le volant, chaque mouvement mesuré. Le marteau repose, lourd, sur le siège passager, une promesse muette dans la lumière néon.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Fail Reason: Custom function returned false
+const clean = output.replace(/```json/g, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
+try {
+return JSON.parse(clean).sentiment.score &gt; 75;
+} catch (e) {
+return false;
+}</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&#39;fan&#39;, &#39;blinds&#39;, &#39;smoke&#39;]">[&#39;fan&#39;, &#39;blinds&#39;, &#39;smoke&#39;]</td>
+          
+          <td data-content="DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou.">DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou.</td>
+          
+          <td data-content="[PASS] (0.80)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Frustration&quot;},
+&quot;analyse_yolo&quot;: &quot;La présence du ventilateur suggère une chaleur oppressante, les stores filtrent la lumière créant une ambiance claustrophobe, et la fumée ajoute une tension palpable à l&#39;atmosphère.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur tourne lentement, essayant en vain de combattre l&#39;air étouffant, tandis que les stores laissent passer quelques rayons de lumière crue. Une légère fumée s&#39;élève, rendant l&#39;air encore plus suffocant.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed">[PASS] (0.80)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Frustration&quot;},
+&quot;analyse_yolo&quot;: &quot;La présence du ventilateur suggère une chaleur oppressante, les stores filtrent la lumière créant une ambiance claustrophobe, et la fumée ajoute une tension palpable à l&#39;atmosphère.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur tourne lentement, essayant en vain de combattre l&#39;air étouffant, tandis que les stores laissent passer quelques rayons de lumière crue. Une légère fumée s&#39;élève, rendant l&#39;air encore plus suffocant.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed</td>
+          
+          <td data-content="[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le ventilateur tourne lentement, projetant des ombres tremblantes sur les murs, comme un témoin silencieux d&#39;une chaleur oppressante qui s&#39;infiltre dans chaque recoin. Les stores, à moitié arrachés, laissent entrevoir des éclats de néons colorés qui dansent avec la fumée stagnante, créant une symphonie visuelle de délabrement urbain.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur grince faiblement, luttant contre l&#39;air lourd et suffocant. La fumée s&#39;accumule, s&#39;entremêle paresseusement avec les rayons de néons cramoisis venant de l&#39;extérieur, dessinant des motifs de désespoir sur les murs ternis. Les stores, fatigués et décolorés, laissent filtrer juste assez de lumière pour révéler la poussière dansante, figée dans l&#39;air saturé.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed">[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Aliénation&quot;},
+&quot;analyse_yolo&quot;: &quot;Le ventilateur tourne lentement, projetant des ombres tremblantes sur les murs, comme un témoin silencieux d&#39;une chaleur oppressante qui s&#39;infiltre dans chaque recoin. Les stores, à moitié arrachés, laissent entrevoir des éclats de néons colorés qui dansent avec la fumée stagnante, créant une symphonie visuelle de délabrement urbain.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur grince faiblement, luttant contre l&#39;air lourd et suffocant. La fumée s&#39;accumule, s&#39;entremêle paresseusement avec les rayons de néons cramoisis venant de l&#39;extérieur, dessinant des motifs de désespoir sur les murs ternis. Les stores, fatigués et décolorés, laissent filtrer juste assez de lumière pour révéler la poussière dansante, figée dans l&#39;air saturé.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed</td>
+          
+          <td data-content="[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension Silencieuse&quot;},
+&quot;analyse_yolo&quot;: &quot;Le ventilateur tourne lentement, créant une ambiance pesante ; les stores filtrent les néons, jouant avec les ombres ; la fumée s&#39;élève lentement, suspendue dans l&#39;air, gardant le temps en pause.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur tourne avec une paresse calculée, projetant des ombres mouvantes sur les murs. Les stores laissent passer juste assez de lumière pour peindre la pièce en néon rose et bleu. La fumée s&#39;élève, dessinant des volutes incertaines, chaque respiration ajoutant à l&#39;oppressante immobilité du moment.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed">[PASS] (1.00)
+
+    {
+&quot;sentiment&quot;: {&quot;score&quot;: 75, &quot;emotion&quot;: &quot;Tension Silencieuse&quot;},
+&quot;analyse_yolo&quot;: &quot;Le ventilateur tourne lentement, créant une ambiance pesante ; les stores filtrent les néons, jouant avec les ombres ; la fumée s&#39;élève lentement, suspendue dans l&#39;air, gardant le temps en pause.&quot;,
+&quot;script_enrichi&quot;: &quot;DETECTIVE : Il fait trop chaud pour réfléchir dans ce trou. Le ventilateur tourne avec une paresse calculée, projetant des ombres mouvantes sur les murs. Les stores laissent passer juste assez de lumière pour peindre la pièce en néon rose et bleu. La fumée s&#39;élève, dessinant des volutes incertaines, chaque respiration ajoutant à l&#39;oppressante immobilité du moment.&quot;,
+&quot;verdict&quot;: &quot;NOIR&quot;
+}
+
+    Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

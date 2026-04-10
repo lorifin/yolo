@@ -1,0 +1,14 @@
+[project]
+name = "formation-ia-docker"
+version = "0.1.0"
+description = "Projet Docker de Formation IA et Prospection"
+dependencies = [
+    "pandas",
+    "requests",
+    "flask",
+    "ultralytics",
+    "opencv-python-headless",
+    "pypdf",
+    "python-dotenv",
+    "openai"
+]

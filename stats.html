@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques - Formation Gemini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+            <img src="assets/logo.svg" alt="Logo Gemini CLI" style="height: 40px;">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a_propos.html">À propos</a></li>
+                <li><a href="stats.html" style="color: #9b51e0;">Stats</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Statistiques du Site</h1>
+        <p>Analyse automatique par script Python</p>
+    </header>
+
+    <main>
+        <section id="stats-section">
+            <h2>Comptage des Mots</h2>
+            <p>Voici la répartition du volume de texte par page :</p>
+
+            <div class="chart-container">
+                <!-- Bar Chart Item: Index -->
+                <div class="chart-row">
+                    <span class="chart-label">index.html</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar" style="width: 84%; animation-delay: 0.1s;">36 mots</div>
+                    </div>
+                </div>
+
+                <!-- Bar Chart Item: À Propos -->
+                <div class="chart-row">
+                    <span class="chart-label">a_propos.html</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar" style="width: 100%; animation-delay: 0.3s;">43 mots</div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Mots</th>
+                        <th>% du Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>index.html</td>
+                        <td>36</td>
+                        <td>45.5%</td>
+                    </tr>
+                    <tr>
+                        <td>a_propos.html</td>
+                        <td>43</td>
+                        <td>54.5%</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>79</th>
+                        <th>100%</th>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <a href="index.html"><button>Retour à l'accueil</button></a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

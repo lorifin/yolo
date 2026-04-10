@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Analyse Automatisée Néo-Noir via Python Script</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-wrap;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>film_title</th>
+        
+        <th>[google:gemini-2.5-flash] 
+Tu es un analyste expert du Néo-Noir.
+Sujet : {{film_title}}
+
+Analyse la scène d&#39;ouverture ou l&#39;ambiance générale sous l&#39;angle de la &quot;Fatalité&quot;.
+Comment l&#39;environnement visuel condamne-t-il les personnages dès le début ?
+
+Sois concis (max 150 mots) mais incisif.
+</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="L.A. Confidential (1997)">L.A. Confidential (1997)</td>
+          
+          <td data-content="[PASS] (1.00)
+
+L&#39;ouverture de *L.A. Confidential* est une damnation visuelle. Le montage du magazine &quot;Hush-Hush&quot; dénude instantanément la façade glamour de Los Angeles, révélant une pourriture systémique sous le vernis hollywoodien. La lumière crue californienne, loin de purifier, expose impitoyablement la corruption, la violence et le vice en plein jour.
+
+Les palmiers et le soleil deviennent un décor ironique pour un enfer moral. Les personnages ne sont pas introduits dans un monde à corrompre, mais dans un système déjà gangrené. Leur fatalité est inscrite dans ce paysage urbain : un piège doré où l&#39;innocence est une illusion et la rédemption, une chimère. Ils sont condamnés avant même d&#39;agir, par la ville elle-même.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+L&#39;ouverture de *L.A. Confidential* est une damnation visuelle. Le montage du magazine &quot;Hush-Hush&quot; dénude instantanément la façade glamour de Los Angeles, révélant une pourriture systémique sous le vernis hollywoodien. La lumière crue californienne, loin de purifier, expose impitoyablement la corruption, la violence et le vice en plein jour.
+
+Les palmiers et le soleil deviennent un décor ironique pour un enfer moral. Les personnages ne sont pas introduits dans un monde à corrompre, mais dans un système déjà gangrené. Leur fatalité est inscrite dans ce paysage urbain : un piège doré où l&#39;innocence est une illusion et la rédemption, une chimère. Ils sont condamnés avant même d&#39;agir, par la ville elle-même.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Memento (2000)">Memento (2000)</td>
+          
+          <td data-content="[PASS] (1.00)
+
+L&#39;ouverture de *Memento* est une déclaration de fatalité pure. La séquence inversée du meurtre, où le sang retourne à la plaie et la balle au canon, ne révèle pas seulement la fin : elle *scelle* le destin de Leonard.
+
+L&#39;environnement visuel, par cette chronologie déconstruite, condamne Leonard à une boucle perpétuelle. Il n&#39;y a pas d&#39;échappatoire à son acte final, car il est déjà accompli, puis déconstruit, puis ré-accompli. Sa mémoire fragmentée est son propre bourreau, le piégeant dans un labyrinthe mental où chaque &quot;vérité&quot; est éphémère. Les décors impersonnels et les notes éparses ne sont pas des indices, mais les barreaux d&#39;une prison cognitive. Le film ne commence pas ; il *recommence* sans cesse, chaque vision étant une nouvelle condamnation à l&#39;oubli et à la répétition.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+L&#39;ouverture de *Memento* est une déclaration de fatalité pure. La séquence inversée du meurtre, où le sang retourne à la plaie et la balle au canon, ne révèle pas seulement la fin : elle *scelle* le destin de Leonard.
+
+L&#39;environnement visuel, par cette chronologie déconstruite, condamne Leonard à une boucle perpétuelle. Il n&#39;y a pas d&#39;échappatoire à son acte final, car il est déjà accompli, puis déconstruit, puis ré-accompli. Sa mémoire fragmentée est son propre bourreau, le piégeant dans un labyrinthe mental où chaque &quot;vérité&quot; est éphémère. Les décors impersonnels et les notes éparses ne sont pas des indices, mais les barreaux d&#39;une prison cognitive. Le film ne commence pas ; il *recommence* sans cesse, chaque vision étant une nouvelle condamnation à l&#39;oubli et à la répétition.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Mulholland Drive (2001)">Mulholland Drive (2001)</td>
+          
+          <td data-content="[PASS] (1.00)
+
+La scène d&#39;ouverture de *Mulholland Drive* ne présente pas un chemin, mais un cul-de-sac. La route sinueuse et nocturne de Mulholland Drive, éclairée par des phares qui ne percent qu&#39;une fraction de l&#39;obscurité, est une métaphore visuelle de la fatalité. Elle n&#39;est pas un décor, mais un piège tendu, un destin inéluctable où l&#39;accident n&#39;est pas un imprévu, mais l&#39;aboutissement logique d&#39;un parcours déjà tracé.
+
+L&#39;esthétique onirique et floue des premières images (le jitterbug) n&#39;est pas une promesse d&#39;évasion, mais le voile d&#39;une réalité déjà corrompue, un rêve qui est en fait un cauchemar prémonitoire. Les personnages sont condamnés avant même d&#39;agir, piégés dans un Los Angeles où la lumière des projecteurs masque une obscurité existentielle, et où chaque espoir est une illusion vouée à l&#39;écrasement. Le décor est le destin.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+La scène d&#39;ouverture de *Mulholland Drive* ne présente pas un chemin, mais un cul-de-sac. La route sinueuse et nocturne de Mulholland Drive, éclairée par des phares qui ne percent qu&#39;une fraction de l&#39;obscurité, est une métaphore visuelle de la fatalité. Elle n&#39;est pas un décor, mais un piège tendu, un destin inéluctable où l&#39;accident n&#39;est pas un imprévu, mais l&#39;aboutissement logique d&#39;un parcours déjà tracé.
+
+L&#39;esthétique onirique et floue des premières images (le jitterbug) n&#39;est pas une promesse d&#39;évasion, mais le voile d&#39;une réalité déjà corrompue, un rêve qui est en fait un cauchemar prémonitoire. Les personnages sont condamnés avant même d&#39;agir, piégés dans un Los Angeles où la lumière des projecteurs masque une obscurité existentielle, et où chaque espoir est une illusion vouée à l&#39;écrasement. Le décor est le destin.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Sin City (2005)">Sin City (2005)</td>
+          
+          <td data-content="[FAIL] (0.50)
+
+Dès les premières images, Sin City n&#39;est pas un décor, mais une sentence. Le noir et blanc hyper-contrasté, épuré de toute nuance chromatique, n&#39;offre aucune échappatoire morale.
+
+Les ombres ne sont pas des cachettes, mais des linceuls qui enveloppent les personnages, les condamnant à une existence prédéfinie par leurs péchés et la corruption ambiante. Sous une pluie incessante et une nuit éternelle, la ville elle-même est un personnage carcéral, un labyrinthe de damnation où chaque ruelle, chaque silhouette est un rappel visuel de l&#39;inéluctabilité du destin.
+
+L&#39;esthétique graphique n&#39;est pas un choix stylistique, mais la manifestation visuelle d&#39;une fatalité nihiliste, où l&#39;espoir est une illusion et la rédemption, un mythe. Les personnages sont des figures figées dans un tableau de leur propre damnation.
+
+Fail Reason: Expected output to contain one of &quot;contraste, rouge, Frank Miller&quot;">[FAIL] (0.50)
+
+Dès les premières images, Sin City n&#39;est pas un décor, mais une sentence. Le noir et blanc hyper-contrasté, épuré de toute nuance chromatique, n&#39;offre aucune échappatoire morale.
+
+Les ombres ne sont pas des cachettes, mais des linceuls qui enveloppent les personnages, les condamnant à une existence prédéfinie par leurs péchés et la corruption ambiante. Sous une pluie incessante et une nuit éternelle, la ville elle-même est un personnage carcéral, un labyrinthe de damnation où chaque ruelle, chaque silhouette est un rappel visuel de l&#39;inéluctabilité du destin.
+
+L&#39;esthétique graphique n&#39;est pas un choix stylistique, mais la manifestation visuelle d&#39;une fatalité nihiliste, où l&#39;espoir est une illusion et la rédemption, un mythe. Les personnages sont des figures figées dans un tableau de leur propre damnation.
+
+Fail Reason: Expected output to contain one of &quot;contraste, rouge, Frank Miller&quot;</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Nightcrawler (2014)">Nightcrawler (2014)</td>
+          
+          <td data-content="[FAIL] (0.50)
+
+Dès l&#39;ouverture de *Nightcrawler*, la fatalité s&#39;inscrit dans le tissu visuel de Los Angeles. La ville est une entité prédatrice, baignée d&#39;une lumière nocturne artificielle et clinique – néons froids, phares aveuglants, écrans omniprésents. Cet environnement n&#39;est pas un simple décor ; c&#39;est une matrice qui façonne et condamne ses habitants.
+
+Il impose une survie opportuniste, où l&#39;humanité est érodée par la quête incessante du spectacle et du profit. Lou Bloom n&#39;est pas une anomalie, mais le produit inévitable de ce système, un prédateur parfaitement adapté à son écosystème médiatique et moralement désertique. La promesse du rêve californien est pervertie en un cauchemar de surveillance et d&#39;amoralité, scellant le destin de chacun dans cette jungle de béton et de pixels.
+
+Fail Reason: Expected output to contain one of &quot;médias, vidéo, cynisme&quot;">[FAIL] (0.50)
+
+Dès l&#39;ouverture de *Nightcrawler*, la fatalité s&#39;inscrit dans le tissu visuel de Los Angeles. La ville est une entité prédatrice, baignée d&#39;une lumière nocturne artificielle et clinique – néons froids, phares aveuglants, écrans omniprésents. Cet environnement n&#39;est pas un simple décor ; c&#39;est une matrice qui façonne et condamne ses habitants.
+
+Il impose une survie opportuniste, où l&#39;humanité est érodée par la quête incessante du spectacle et du profit. Lou Bloom n&#39;est pas une anomalie, mais le produit inévitable de ce système, un prédateur parfaitement adapté à son écosystème médiatique et moralement désertique. La promesse du rêve californien est pervertie en un cauchemar de surveillance et d&#39;amoralité, scellant le destin de chacun dans cette jungle de béton et de pixels.
+
+Fail Reason: Expected output to contain one of &quot;médias, vidéo, cynisme&quot;</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

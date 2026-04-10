@@ -1,0 +1,154 @@
+{
+  "leads": [
+    {
+      "nom": "Jérôme COMBALOT",
+      "entreprise": "France Travail",
+      "poste": "Directeur Innovation",
+      "email": "jerome.combalot@francetravail.fr",
+      "score": 95
+    },
+    {
+      "nom": "Aurélien Corbin",
+      "entreprise": "PwC France",
+      "poste": "Directeur",
+      "email": "aurelien.corbin@pwc.com",
+      "score": 95
+    },
+    {
+      "nom": "David Lerouge",
+      "entreprise": "COLAS",
+      "poste": "Directeur Innovation",
+      "email": "david.lerouge@colas.com",
+      "score": 95
+    },
+    {
+      "nom": "Julien Cutolo",
+      "entreprise": "Piana",
+      "poste": "CBO",
+      "email": "julien@getpiana.com",
+      "score": 95
+    },
+    {
+      "nom": "Yann Daudin",
+      "entreprise": "France Travail",
+      "poste": "Responsable Innovation",
+      "email": "yann.daudin@francetravail.fr",
+      "score": 95
+    },
+    {
+      "nom": "Guillaume Latimier",
+      "entreprise": "Novencia",
+      "poste": "Manager",
+      "email": "guillaume.latimier@novencia.com",
+      "score": 90
+    },
+    {
+      "nom": "Emeric Marquet",
+      "entreprise": "KPMG",
+      "poste": "Directeur",
+      "email": "emeric.marquet@kpmg.fr",
+      "score": 90
+    },
+    {
+      "nom": "Matthieu Dollé",
+      "entreprise": "Air France",
+      "poste": "Head of AI",
+      "email": "matthieu.dolle@airfrance.fr",
+      "score": 90
+    },
+    {
+      "nom": "Pascal MATHIEU",
+      "entreprise": "Randstad",
+      "poste": "Directeur Innovation",
+      "email": "pascal.mathieu@randstad.fr",
+      "score": 90
+    },
+    {
+      "nom": "Philippe Guermonprez",
+      "entreprise": "Paprec",
+      "poste": "Directeur",
+      "email": "philippe.guermonprez@paprec.com",
+      "score": 90
+    },
+    {
+      "nom": "Philippe Lambert",
+      "entreprise": "M2i Formation",
+      "poste": "Directeur Pédagogique",
+      "email": "p.lambert@m2iformation.fr",
+      "score": 98
+    },
+    {
+      "nom": "Eric Segonds",
+      "entreprise": "Cegos",
+      "poste": "Manager Pôle Expertise",
+      "email": "esegonds@cegos.fr",
+      "score": 98
+    },
+    {
+      "nom": "Mathieu Giannecchini",
+      "entreprise": "Simplon",
+      "poste": "DGA IA",
+      "email": "mathieu@simplon.co",
+      "score": 95
+    },
+    {
+      "nom": "Luciana",
+      "entreprise": "Albert School",
+      "poste": "Dir. Executive Education",
+      "email": "luciana@albertschool.com",
+      "score": 95
+    },
+    {
+      "nom": "Nathan Loth",
+      "entreprise": "DataScientest",
+      "poste": "Responsable Commercial B2B",
+      "email": "n.loth@datascientest.com",
+      "score": 92
+    },
+    {
+      "nom": "Aurélie Lasselin",
+      "entreprise": "Visiplus",
+      "poste": "Directrice Conseils",
+      "email": "aurelie.lasselin@visiplus.com",
+      "score": 92
+    },
+    {
+      "nom": "Philippe Argouges",
+      "entreprise": "Orsys",
+      "poste": "Expert Ingénierie",
+      "email": "pargouges@orsys.fr",
+      "score": 90
+    },
+    {
+      "nom": "Erwan Poiraud",
+      "entreprise": "Eureka Education",
+      "poste": "Dir. Innovation Pédagogique",
+      "email": "erwan.poiraud@eureka-education.fr",
+      "score": 95
+    },
+    {
+      "nom": "Steven Launay",
+      "entreprise": "Skillsday",
+      "poste": "Directeur Pédagogique",
+      "email": "steven@skillsday.com",
+      "score": 95,
+      "source": "Hunter.io"
+    },
+    {
+      "nom": "Mohamed BOUKABOUS",
+      "entreprise": "Skillsday",
+      "poste": "Ingénieur Pédagogique",
+      "email": "mohamed@skillsday.com",
+      "score": 95,
+      "source": "Hunter.io"
+    },
+    {
+      "nom": "Xavier Paroutaud",
+      "entreprise": "Federation for European Education",
+      "poste": "Directeur Innovation",
+      "email": "xavier.paroutaud@fede.education",
+      "score": 95,
+      "source": "Hunter.io"
+    }
+  ]
+}
